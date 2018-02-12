@@ -6,6 +6,7 @@
 
 package com.cmm.cvs2xml;
 
+import com.cmm.cvs2xml.addendas.soriana.utils.CmmCvsSorianaGeneralUtils;
 import com.cmm.cvs2xml.bean.FacturaDatos;
 import com.cmm.cvs2xml.bean.LineaDatosConcepto;
 import com.cmm.cvs2xml.econtabilidad.v13.balanza.bean.BalanzaDatos;
@@ -140,9 +141,10 @@ public class CmmCvsConvert {
                             if (line.startsWith(CmmCvsEmisorUtils.idRegistro)){
                                 if(facturaDatos==null){
                                     facturaDatos = new FacturaDatos();
+                                } else if(!(line.startsWith(CmmCvsSorianaGeneralUtils.idRegistro) || line.startsWith(CmmCvsSorianaGeneralUtils.idRegistroPieDeCamion))){
+                                	System.out.println("----- cargando emisor...");
+                                    facturaDatos.setLineaDatosEmisor(CmmCvsEmisorUtils.fillData(line));
                                 }
-                                System.out.println("----- cargando emisor...");
-                                facturaDatos.setLineaDatosEmisor(CmmCvsEmisorUtils.fillData(line));
                             }
                         }
 
@@ -250,6 +252,11 @@ public class CmmCvsConvert {
                             //addenda Chrysler PPY v1.0 - 00245
                             com.cmm.cvs2xml.addendas.chryslerppy.utils.CmmCvsConvert.convert(facturaDatos, line);
                             
+                            //addenda Chrysler PPY v1.0 - 00245
+                            com.cmm.cvs2xml.addendas.chryslerppy.utils.CmmCvsConvert.convert(facturaDatos, line);
+                            
+                            //addenda Soriana v1.0 - 00250 - 00251
+                            com.cmm.cvs2xml.addendas.soriana.utils.CmmCvsConvert.convert(facturaDatos, line);                            
                         //----FIN Intentamos con addendas ------
                     }
                     // </editor-fold>

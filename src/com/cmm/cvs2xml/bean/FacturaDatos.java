@@ -11,6 +11,8 @@ import com.cmm.cvs2xml.addendas.chryslerpua.bean.AddendaChryslerPuaDatos;
 import com.cmm.cvs2xml.addendas.fordfom.bean.AddendaFordFomDatos;
 import com.cmm.cvs2xml.addendas.gm.v13.bean.AddendaGMv13Datos;
 import com.cmm.cvs2xml.addendas.sanofi.bean.AddendaSanofiDatos;
+import com.cmm.cvs2xml.addendas.soriana.bean.AddendaSorianaDatos;
+import com.cmm.cvs2xml.addendas.soriana.bean.AddendaSorianaPieDeCamionDatos;
 import com.cmm.cvs2xml.addendas.vwpmt.bean.AddendaVwPmtDatos;
 import com.cmm.cvs2xml.complementos.donat.bean.DonatDatos;
 import com.cmm.cvs2xml.complementos.implocal.bean.ImpLocalDatos;
@@ -50,6 +52,8 @@ public class FacturaDatos {
     private AddendaGMv13Datos addendaGMv13Datos;
     private AddendaChryslerPpyDatos addendaChryslerPpyDatos;
     private AddendaFordFomDatos addendaFordFomDatos;
+    private AddendaSorianaDatos addendaSorianaDatos;
+    private AddendaSorianaPieDeCamionDatos addendaSorianaPieDeCamionDatos;
 
     public LineaDatosFactura getLineaDatosFactura() {
         return lineaDatosFactura;
@@ -212,6 +216,20 @@ public class FacturaDatos {
     public void setListaDatosCFDIRelacionado(LineaDatosCFDIRelacionado listaDatosCFDIRelacionado) {
         this.listaDatosCFDIRelacionado = listaDatosCFDIRelacionado;
     }
+    
+    public AddendaSorianaDatos getAddendaSorianaDatos() {
+        return addendaSorianaDatos;
+    }
 
-   
+    public void setAddendaSorianaDatos(AddendaSorianaDatos addendaSorianaDatos) {
+        this.addendaSorianaDatos = addendaSorianaDatos;
+    }
+
+    public AddendaSorianaPieDeCamionDatos getAddendaSorianaPieDeCamionDatos() {
+        return addendaSorianaPieDeCamionDatos;
+    }
+
+    public void setAddendaSorianaPieDeCamionDatos(AddendaSorianaPieDeCamionDatos addendaSorianaPieDeCamionDatos) {
+        this.addendaSorianaPieDeCamionDatos = addendaSorianaPieDeCamionDatos;
+    }
 }

@@ -267,4 +267,21 @@ public class GenericValidator {
         }
         return true;
     }
+    
+    public boolean isVersion(String version, int count) {
+        try {
+            String []split = version.split("\\.");
+            if(split.length < 1) {
+                return isNumeric(version, 1, count);
+            }
+            for (int i = 0; i < split.length; i++) {
+                if(!isNumeric("" + split[i], 1, count)) {
+                        return false;
+                }
+            }
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

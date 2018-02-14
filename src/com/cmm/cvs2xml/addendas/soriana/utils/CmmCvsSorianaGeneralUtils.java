@@ -191,7 +191,7 @@ public class CmmCvsSorianaGeneralUtils {
 							|| "CREDIT_NOTE".equals(StringManage.getValidString(str))
 							|| "LEASE_RECEIPT".equals(StringManage.getValidString(str)))) {
 						throw new IllegalArgumentException(
-								"DATO requestForPaymentIdentification entityType, INCORRECTO, DEBE SER UN VALOR [ INVOICE = Factura DEBIT_NOTE = Nota de debito CREDIT_NOTE = Nota de cr�dito LEASE_RECEIPT = Recibo de ]: "
+								"DATO requestForPaymentIdentification entityType, INCORRECTO, DEBE SER UN VALOR [ INVOICE = Factura DEBIT_NOTE = Nota de debito CREDIT_NOTE = Nota de crédito LEASE_RECEIPT = Recibo de ]: "
 										+ str);
 					}
 					requestForPaymentIdentification.setEntityType(str);
@@ -199,9 +199,9 @@ public class CmmCvsSorianaGeneralUtils {
 				case 8:
 					// requestForPaymentIdentification uniqueCreatorIdentification
 					if (!(StringManage.getValidString(str).length() >= 1
-							&& StringManage.getValidString(str).length() <= 7)) {
+							&& StringManage.getValidString(str).length() <= 17)) {
 						throw new IllegalArgumentException(
-								"DATO requestForPaymentIdentification uniqueCreatorIdentification, INCORRECTO, DEBE SER UN VALOR DE 1 a 7 CARACTERES: "
+								"DATO requestForPaymentIdentification uniqueCreatorIdentification, INCORRECTO, DEBE SER UN VALOR DE 1 a 17 CARACTERES: "
 										+ str);
 					}
 					requestForPaymentIdentification.setUniqueCreatorIdentification(str);
@@ -224,7 +224,7 @@ public class CmmCvsSorianaGeneralUtils {
 							|| "PUR".equals(StringManage.getValidString(str))
 							|| "ZZZ".equals(StringManage.getValidString(str)))) {
 						throw new IllegalArgumentException(
-								"DATO specialInstruction code, INCORRECTO, DEBE SER UN VALOR [ AAB=Condiciones de pago DUT=Informaci�n de impuestos (Pedimentos) PUR=Informaci�n de compras ZZZ =Importe con letra ]: "
+								"DATO specialInstruction code, INCORRECTO, DEBE SER UN VALOR [ AAB=Condiciones de pago DUT=Información de impuestos (Pedimentos) PUR=Información de compras ZZZ =Importe con letra ]: "
 										+ str);
 					}
 					specialInstruction.setCode(str);
@@ -233,9 +233,9 @@ public class CmmCvsSorianaGeneralUtils {
 				case 11:
 					// orderIdentification referenceIdentification
 					if (!(StringManage.getValidString(str).length() >= 1
-							&& StringManage.getValidString(str).length() <= 7)) {
+							&& StringManage.getValidString(str).length() <= 35)) {
 						throw new IllegalArgumentException(
-								"DATO orderIdentification referenceIdentification, INCORRECTO, DEBE SER UN VALOR DE 1 a 7 CARACTERES: "
+								"DATO orderIdentification referenceIdentification, INCORRECTO, DEBE SER UN VALOR DE 1 a 35 CARACTERES: "
 										+ str);
 					}
 					r.setValue(str);
@@ -281,7 +281,7 @@ public class CmmCvsSorianaGeneralUtils {
 							|| "DQ".equals(StringManage.getValidString(str))
 							|| "IV".equals(StringManage.getValidString(str)))) {
 						throw new IllegalArgumentException(
-								"DATO additionalInformation referenceIdentification type, INCORRECTO, DEBE SER UN VALOR [AAE= Cuenta predial CK = N�mero de cheque ACE= Numero de documento(Reemisi�n) ATZ = N�mero de aprobaci�n. AWR = Numero de documento que  se reemplaza ON  = N�mero de pedido (comprador) DQ = Folio de recibo de mercanc�as IV = N�mero de Factura]: "
+								"DATO additionalInformation referenceIdentification type, INCORRECTO, DEBE SER UN VALOR [AAE= Cuenta predial CK = Número de cheque ACE= Numero de documento(Reemisión) ATZ = Número de aprobación. AWR = Numero de documento que  se reemplaza ON  = Número de pedido (comprador) DQ = Folio de recibo de mercancías IV = Número de Factura]: "
 										+ str);
 					}
 					rA.setType(str);
@@ -355,7 +355,7 @@ public class CmmCvsSorianaGeneralUtils {
 					if (!("SELLER_ASSIGNED_IDENTIFIER_FOR_A_PARTY".equals(StringManage.getValidString(str))
 							|| "IEPS_REFERENCE".equals(StringManage.getValidString(str)))) {
 						throw new IllegalArgumentException(
-								"DATO seller alternatePartyIdentification type, INCORRECTO, DEBE SER UN VALOR [SELLER_ASSIGNED_IDENTIFIER_FOR_A_PARTY = N�mero interno del proveedor IEPS_REFERENCE = Referencia signada para el IEPS]: "
+								"DATO seller alternatePartyIdentification type, INCORRECTO, DEBE SER UN VALOR [SELLER_ASSIGNED_IDENTIFIER_FOR_A_PARTY = Número interno del proveedor IEPS_REFERENCE = Referencia signada para el IEPS]: "
 										+ str);
 					}
 					alternatePartyIdentification.setType(str);
@@ -367,7 +367,7 @@ public class CmmCvsSorianaGeneralUtils {
 					if (!(StringManage.getValidString(str).length() >= 1
 							&& StringManage.getValidString(str).length() <= 15)) {
 						throw new IllegalArgumentException(
-								"DATO shipTo gln, INCORRECTO, DEBE SER UN VALOR DE 1 a 13 CARACTERES: " + str);
+								"DATO shipTo gln, INCORRECTO, DEBE SER UN VALOR DE 1 a 15 CARACTERES: " + str);
 					}
 					shipTo.setGln(str);
 					break;
@@ -406,7 +406,7 @@ public class CmmCvsSorianaGeneralUtils {
 					if (!(StringManage.getValidString(str).length() >= 1
 							&& StringManage.getValidString(str).length() <= 19)) {
 						throw new IllegalArgumentException(
-								"DATO shipTo nameAndAddress postalCode, INCORRECTO, DEBE SER UN VALOR DE 1 a 19 CARACTERES: "
+								"DATO shipTo nameAndAddress postalCode, INCORRECTO, DEBE SER UN VALOR DE 1 a 9 CARACTERES: "
 										+ str);
 					}
 					nameAndAddress.setPostalCode(str);
@@ -491,7 +491,7 @@ public class CmmCvsSorianaGeneralUtils {
 							|| "USD".equals(StringManage.getValidString(str))
 							|| "XEU".equals(StringManage.getValidString(str)))) {
 						throw new IllegalArgumentException(
-								"DATO currency currencyISOCode, INCORRECTO, DEBE SER UN VALOR [MXN= Peso Mexicano USD= D�lar XEU= Euro]: "
+								"DATO currency currencyISOCode, INCORRECTO, DEBE SER UN VALOR [MXN= Peso Mexicano USD= Dólar XEU= Euro]: "
 										+ str);
 					}
 					currency.setCurrencyISOCode(str);
@@ -502,7 +502,7 @@ public class CmmCvsSorianaGeneralUtils {
 							|| "PRICE_CURRENCY".equals(StringManage.getValidString(str))
 							|| "PAYMENT_CURRENCY".equals(StringManage.getValidString(str)))) {
 						throw new IllegalArgumentException(
-								"DATO currency currencyFunction, INCORRECTO, DEBE SER UN VALOR [BILLING_CURRENCY = Divisa de facturaci�n PRICE_CURRENCY = Divisa del precio PAYMENT_CURRENCY = Divisa de pago]: "
+								"DATO currency currencyFunction, INCORRECTO, DEBE SER UN VALOR [BILLING_CURRENCY = Divisa de facturación PRICE_CURRENCY = Divisa del precio PAYMENT_CURRENCY = Divisa de pago]: "
 										+ str);
 					}
 					currency.setCurrencyFunction(str);
@@ -624,7 +624,7 @@ public class CmmCvsSorianaGeneralUtils {
 							|| "VAB".equals(StringManage.getValidString(str))
 							|| "ZZZ".equals(StringManage.getValidString(str)))) {
 						throw new IllegalArgumentException(
-								"DATO allowanceCharge specialServicesType, INCORRECTO, DEBE SER UN VALOR [AA = Abono por Publicidad ABZ = Rebaja o descuento miscel�neo ADS = Pedido de un palet completo ADT = Recolecci�n ADO = Descuento Log�stico AJ   = Ajustes CAC = Descuento / efectivo COD = Pago contra entrega DA  = Descuento defectuoso DI   = Descuento EAA = Descuento por pronta compra de los clientes EAB = Descuento por pronto pago FA  = Descuento por flete FC  = Cargo por flete FG = Descuento por mercanc�as gratuitas FI = Cargo financiero HD = Cargo por manejo de mercanc�a QD  = Cantidad de descuento PAD = Descuento promocional PI  = Descuento por recolecci�n QD = Cantidad Descontada RAA = Rebaja SAB = Descuentos especiales TAE = Descuento por Camioneta TD  = Descuento comercial TS  =  Impuesto estatal TX  = Impuestos TZ = Descuento temporal UM = Descuento de mercanc�a invendible VAB = Descuento por volumen ZZZ = Mutuamente definido]: "
+								"DATO allowanceCharge specialServicesType, INCORRECTO, DEBE SER UN VALOR [AA = Abono por Publicidad ABZ = Rebaja o descuento misceláneo ADS = Pedido de un palet completo ADT = Recolección ADO = Descuento Logístico AJ   = Ajustes CAC = Descuento / efectivo COD = Pago contra entrega DA  = Descuento defectuoso DI   = Descuento EAA = Descuento por pronta compra de los clientes EAB = Descuento por pronto pago FA  = Descuento por flete FC  = Cargo por flete FG = Descuento por mercancías gratuitas FI = Cargo financiero HD = Cargo por manejo de mercancía QD  = Cantidad de descuento PAD = Descuento promocional PI  = Descuento por recolección QD = Cantidad Descontada RAA = Rebaja SAB = Descuentos especiales TAE = Descuento por Camioneta TD  = Descuento comercial TS  =  Impuesto estatal TX  = Impuestos TZ = Descuento temporal UM = Descuento de mercancía invendible VAB = Descuento por volumen ZZZ = Mutuamente definido]: "
 										+ str);
 					}
 					allowanceCharge.setSpecialServicesType(str);
@@ -715,7 +715,7 @@ public class CmmCvsSorianaGeneralUtils {
 					if (!("ES".equals(StringManage.getValidString(str))
 							|| "EN".equals(StringManage.getValidString(str)))) {
 						throw new IllegalArgumentException(
-								"DATO lineItem tradeItemDescriptionInformation language, INCORRECTO, DEBE SER UN VALOR [ES= Espa�ol EN= Ingles]: "
+								"DATO lineItem tradeItemDescriptionInformation language, INCORRECTO, DEBE SER UN VALOR [ES= Español EN= Ingles]: "
 										+ str);
 					}
 					tradeItemDescriptionInformationA.setLanguage(str);
